@@ -1,0 +1,27 @@
+[package]
+name = "shp_to_3dtiles"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+shapefile = {version = "0.3.0", features = ["geo-types"]}
+geo = "0.23.0"
+gfx-maths = "0.2.8"
+earcutr = "0.3.0"
+gltf-json = "1.0.0"
+serde_json="1.0.87"
+serde = { version = "1.0", features = ["derive"] }
+byteorder="1.4.3"
+geotiff-rs = "0.1.0"
+
+[dependencies.gltf]
+version = "1.0"
+features = ["extras", "names"]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
